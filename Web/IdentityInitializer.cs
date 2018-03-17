@@ -10,13 +10,13 @@ namespace Web
 {
     public class IdentityInitializer
     {
-        private readonly Models.AppContext _context;
+        private readonly Models.ApplicationContext _context;
         private readonly ILogger<IdentityInitializer> _logger;
         private readonly RoleManager<IdentityRole> _roleMgr;
         private readonly UserManager<IdentityUser> _userMgr;
 
         public IdentityInitializer(UserManager<IdentityUser> userMgr, RoleManager<IdentityRole> roleMgr,
-            Models.AppContext context, ILogger<IdentityInitializer> logger)
+            Models.ApplicationContext context, ILogger<IdentityInitializer> logger)
         {
             _userMgr = userMgr;
             _roleMgr = roleMgr;

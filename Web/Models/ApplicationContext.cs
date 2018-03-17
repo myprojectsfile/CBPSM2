@@ -6,10 +6,10 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Models
 {
-    public class AppContext : IdentityDbContext<IdentityUser, IdentityRole, string>
+    public class ApplicationContext : IdentityDbContext<IdentityUser, IdentityRole, string>
     {
         private IConfigurationRoot _config;
-        public AppContext(DbContextOptions options, IConfigurationRoot config)
+        public ApplicationContext(DbContextOptions options, IConfigurationRoot config)
             : base(options) => _config = config;
 
         public DbSet<Shareholder> Shareholders { get; set; }

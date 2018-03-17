@@ -30,10 +30,10 @@ namespace Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(_config);
-            services.AddDbContext<AppContext>(ServiceLifetime.Scoped);
+            services.AddDbContext<ApplicationContext>(ServiceLifetime.Scoped);
             services.AddTransient<IdentityInitializer>();
             services.AddIdentity<IdentityUser, IdentityRole>()
-              .AddEntityFrameworkStores<AppContext>();
+              .AddEntityFrameworkStores<ApplicationContext>();
 
             services.AddAuthentication(option =>
             {
