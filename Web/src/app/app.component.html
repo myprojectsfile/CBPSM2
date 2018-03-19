@@ -1,3 +1,15 @@
-<div class="container-fluid">
-    <button type="button" class="btn btn-sm btn-warning">اخطار</button>
-</div>
+<nav>
+    <ul>
+        <li>
+            <a href="" [routerLink]="['/home']">home</a>
+        </li>
+        <li>
+            <a href="" [routerLink]="['/profile']">profile</a>
+        </li>
+        <li>
+            <a href="" [routerLink]="['/profile/profilePhoto']">profile --> profile photo</a>
+        </li>
+    </ul>
+</nav>
+<hr>
+<router-outlet></router-outlet>

@@ -1,0 +1,49 @@
+2018-03-19T22:31:52.8124347+03:30  [INF] Entity Framework Core "2.0.2-rtm-10011" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-03-19T22:31:56.2830613+03:30  [INF] Executed DbCommand ("100"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2018-03-19T22:31:56.9977113+03:30  [INF] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [r]
+        WHERE [r].[Name] = N'Admin')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-19T22:32:53.0073022+03:30 0HLCDPG262IT5:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:4200/api/auth/getToken application/json 39 (ca22a1cb)
+2018-03-19T22:32:53.4250401+03:30 0HLCDPG262IT5:00000001 [INF] Executing action method "Web.Controllers.AuthController.GetToken (Web)" with arguments (["Models.CredentialModel"]) - ModelState is Valid (ba7f4ac2)
+2018-03-19T22:32:53.4361549+03:30 0HLCDPG262IT5:00000001 [INF] Entity Framework Core "2.0.2-rtm-10011" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-03-19T22:32:53.6893584+03:30 0HLCDPG262IT5:00000001 [INF] Executed DbCommand ("65"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-03-19T22:32:53.7429893+03:30 0HLCDPG262IT5:00000001 [INF] Executing HttpStatusCodeResult, setting HTTP status code 401 (e28ccfae)
+2018-03-19T22:32:53.7533060+03:30 0HLCDPG262IT5:00000001 [INF] Executed action "Web.Controllers.AuthController.GetToken (Web)" in 496.2416ms (afa2e885)
+2018-03-19T22:32:53.7619701+03:30 0HLCDPG262IT5:00000001 [INF] Request finished in 760.8459ms 401  (791a596a)
+2018-03-19T22:33:25.4544382+03:30 0HLCDPG262IT6:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:4200/api/auth/getToken application/json 48 (ca22a1cb)
+2018-03-19T22:33:25.4578745+03:30 0HLCDPG262IT6:00000001 [INF] Executing action method "Web.Controllers.AuthController.GetToken (Web)" with arguments (["Models.CredentialModel"]) - ModelState is Valid (ba7f4ac2)
+2018-03-19T22:33:25.4588558+03:30 0HLCDPG262IT6:00000001 [INF] Entity Framework Core "2.0.2-rtm-10011" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-03-19T22:33:25.4892378+03:30 0HLCDPG262IT6:00000001 [INF] Executed DbCommand ("17"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-03-19T22:33:25.7489083+03:30 0HLCDPG262IT6:00000001 [INF] Executed DbCommand ("10"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-03-19T22:33:25.7974809+03:30 0HLCDPG262IT6:00000001 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-03-19T22:33:25.8132537+03:30 0HLCDPG262IT6:00000001 [INF] Executed action "Web.Controllers.AuthController.GetToken (Web)" in 357.6635ms (afa2e885)
+2018-03-19T22:33:25.8150960+03:30 0HLCDPG262IT6:00000001 [INF] Request finished in 360.5025ms 200 application/json; charset=utf-8 (791a596a)
+2018-03-19T22:33:45.0962750+03:30 0HLCDPG262IT7:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:4200/api/auth/getToken application/json 48 (ca22a1cb)
+2018-03-19T22:33:45.0971236+03:30 0HLCDPG262IT7:00000001 [INF] Executing action method "Web.Controllers.AuthController.GetToken (Web)" with arguments (["Models.CredentialModel"]) - ModelState is Valid (ba7f4ac2)
+2018-03-19T22:33:45.0975896+03:30 0HLCDPG262IT7:00000001 [INF] Entity Framework Core "2.0.2-rtm-10011" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-03-19T22:33:45.1006026+03:30 0HLCDPG262IT7:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-03-19T22:33:45.1198886+03:30 0HLCDPG262IT7:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-03-19T22:33:45.1227018+03:30 0HLCDPG262IT7:00000001 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-03-19T22:33:45.1244055+03:30 0HLCDPG262IT7:00000001 [INF] Executed action "Web.Controllers.AuthController.GetToken (Web)" in 27.4974ms (afa2e885)
+2018-03-19T22:33:45.1291721+03:30 0HLCDPG262IT7:00000001 [INF] Request finished in 29.871ms 200 application/json; charset=utf-8 (791a596a)

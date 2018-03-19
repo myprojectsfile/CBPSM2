@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <button mat-raised-button color="primary" (click)="signIn()">ورود</button>
+    <button mat-raised-button color="accent" (click)="signUp()">ثبت نام</button>
+  </div>
+  <br>
+  <div class="row">
+    <button mat-raised-button color="accent" (click)="signOut()">خروج</button>
+    <p *ngIf="isSignedIn()">user signed in</p>
+    <p *ngIf="!isSignedIn()">user is not signed in</p>
+  </div>
+  <br>
+  <div class="row">
+    <button mat-raised-button color="primary" (click)="printClaims()">print claims</button>
+  </div>
+</div>
