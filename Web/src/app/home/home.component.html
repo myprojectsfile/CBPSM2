@@ -1,16 +1,22 @@
 <div class="container">
   <div class="row">
-    <button mat-raised-button color="primary" (click)="signIn()">ورود</button>
-    <button mat-raised-button color="accent" (click)="signUp()">ثبت نام</button>
+    <button class="btn btn-sm btn-primary" (click)="signIn()">ورود</button>
+    <button class="btn btn-sm btn-success" (click)="signUp()">ثبت نام</button>
   </div>
   <br>
   <div class="row">
-    <button mat-raised-button color="accent" (click)="signOut()">خروج</button>
+    <button class="btn btn-sm btn-warning" (click)="signOut()">خروج</button>
+  </div>
+  <div class="row">
     <p *ngIf="isSignedIn()">user signed in</p>
     <p *ngIf="!isSignedIn()">user is not signed in</p>
   </div>
   <br>
   <div class="row">
-    <button mat-raised-button color="primary" (click)="printClaims()">print claims</button>
+    <button class="btn btn-sm btn-danger" (click)="printClaims()">print claims</button>
   </div>
 </div>
+
+<ng-template confirm>
+  <confirm-modal-component></confirm-modal-component>
+</ng-template>
