@@ -33,6 +33,39 @@ export class ModalService {
   }
 }
 
+
+@Component({
+  selector: 'modal-component',
+  template: `<div class="modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="no()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">{{ options.modalTitle}}</h4>
+  </div>
+  <div class="modal-body">
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="yes()">Yes</button>
+    <button type="button" class="btn btn-secondary" (click)="no()">No</button>
+  </div>`
+})
+export class ModalComponent {
+
+  options: ModalOptions;
+
+  constructor(private state: ModalState) {
+    this.options = state.modalOptions;
+  }
+
+  yes() {
+    this.state.modal.close('confirmed');
+  }
+
+  no() {
+    this.state.modal.dismiss('not confirmed');
+  }
+}
+
 @Directive({
   selector: "ng-template[modalComponent]"
 })
@@ -47,8 +80,9 @@ export class ModalTemplateDirective {
   imports: [
     CommonModule
   ],
-  declarations: [ModalTemplateDirective],
-  exports: [ModalTemplateDirective],
+  declarations: [ModalTemplateDirective, ModalComponent],
+  entryComponents:[ModalComponent],
+  exports: [ModalTemplateDirective, ModalComponent],
   providers: [ModalService, ModalState]
 })
 export class ModalModule { }
