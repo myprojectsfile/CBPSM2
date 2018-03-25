@@ -6,9 +6,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { ModalModule } from './shared/modal.module';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HomeComponent } from './home/home.component';
     MaterialModule,
     AppRoutingModule,
     ProfileModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    ModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-<div dir="rtl">
+<!-- <div dir="rtl">
   <p mat-dialog-title>ورود به سامانه</p>
   <mat-dialog-content>
     <form>
@@ -14,19 +14,22 @@
     <button mat-raised-button (click)="signIn()" color="primary">ورود</button>
     <button mat-button [mat-dialog-close]="false">انصراف</button>
   </mat-dialog-actions>
-</div>
+</div> -->
 
-<ng-template #signInTemplate let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-    <h4 class="modal-title">ورود به سامانه</h4>
+<div class="modal fade" id="modal-id">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">{{modalOptions.title}}</h4>
+      </div>
+      <div class="modal-body">
+        <p>لطفا لاگین کنید</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="yes()">Yes</button>
+        <button type="button" class="btn btn-secondary" (click)="no()">No</button>
+      </div>
+    </div>
   </div>
-  <div class="modal-body">
-    <p>Modal body&hellip;</p>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
-  </div>
-</ng-template>
+</div>

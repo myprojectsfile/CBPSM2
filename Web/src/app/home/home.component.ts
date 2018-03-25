@@ -2,6 +2,8 @@ import { AuthService } from './../auth/auth.service';
 import { ConfirmService } from './../auth/confirmService';
 import { Component } from '@angular/core';
 import { Http } from '@angular/http';
+import { ModalService } from '../shared/modal.module';
+
 
 @Component({
     selector: 'app-home',
@@ -10,14 +12,13 @@ import { Http } from '@angular/http';
 })
 export class HomeComponent {
 
-    constructor(private httpService: Http, private authServie: AuthService, private conf: ConfirmService) { }
+    constructor(private httpService: Http, private authServie: AuthService, private conf: ConfirmService, private modalService: ModalService) { }
     apiValues: string[] = [];
 
     signedIn: boolean = false;
 
     signIn() {
-        // this.authServie.signIn();
-        this.conf.confirm({ title: 'Confirm deletion', message: 'Do you really want to delete this foo?' }).then(
+        this.modalService.showModal({ modalTitle: 'Confirm deletion' }).then(
             () => {
                 console.log('deleting...');
             },
