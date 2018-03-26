@@ -1,51 +1,26 @@
-<!-- <div dir="rtl">
-  <p mat-dialog-title>ورود به سامانه</p>
-  <mat-dialog-content>
-    <form>
-      <mat-form-field>
-        <input matInput placeholder="نام کاربری" name="username" [(ngModel)]="username" />
-      </mat-form-field>
-      <mat-form-field>
-        <input type="password" matInput placeholder="کلمه عبور" name="password" [(ngModel)]="password" />
-      </mat-form-field>
-    </form>
-  </mat-dialog-content>
-  <mat-dialog-actions>
-    <button mat-raised-button (click)="signIn()" color="primary">ورود</button>
-    <button mat-button [mat-dialog-close]="false">انصراف</button>
-  </mat-dialog-actions>
-</div> -->
+<div class="modal-header">
+  <h4 class="modal-title">ورود به سامانه</h4>
+</div>
+<div class="modal-body">
 
-<!-- <div class="modal fade" id="modal-id">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">{{modalOptions.modalTitle}}</h4>
-      </div>
-      <div class="modal-body">
-        <p>لطفا لاگین کنید</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" (click)="yes()">Yes</button>
-        <button type="button" class="btn btn-secondary" (click)="no()">No</button>
-      </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">نام کاربری</span>
     </div>
+    <input type="text" class="form-control" name="username" [(ngModel)]="username" aria-label="نام کاربری">
   </div>
-</div> -->
-
-  <div class="modal-header">
-    <h4 class="modal-title">ورود به سامانه</h4>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">نام کاربری</span>
+    </div>
+    <input type="password" class="form-control" name="password" [(ngModel)]="password" aria-label="کلمه عبور">
   </div>
-  <div class="modal-body">
-    <input placeholder="نام کاربری" name="username" [(ngModel)]="username" />
-    <input type="password" placeholder="کلمه عبور" name="password" [(ngModel)]="password" />
-  </div>
-  <div class="modal-footer">
-      <button (click)="signIn()">ورود</button>
-      <button (click)="close()">انصراف</button>
-  </div>
-
-  
-
-  
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary btn-sm" (click)="signIn()">
+    ورود
+  </button>
+  <button type="button" class="btn btn-warning btn-sm" (click)="close()">
+    انصراف
+  </button>
+</div>
