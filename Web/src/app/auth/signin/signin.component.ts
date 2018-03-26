@@ -1,7 +1,7 @@
 import { UserService } from './../user.service';
 import { Component, TemplateRef, ViewChild, AfterViewInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
-import { ModalState, ModalOptions } from '../../shared/modal.module';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-signin',
@@ -10,21 +10,14 @@ import { ModalState, ModalOptions } from '../../shared/modal.module';
 })
 
 
-export class SigninComponent implements AfterViewInit {
-  constructor(private userService: UserService, private modalState: ModalState) {
-    this.modalOptions = this.modalState.modalOptions;
+export class SigninComponent{
+  constructor(private userService: UserService, public ngbActiveModal: NgbActiveModal) {
   }
 
-  @ViewChild('template')
-  template: TemplateRef<any>
 
   username = '';
   password = '';
-  modalOptions: ModalOptions;
 
-  ngAfterViewInit() {
-    this.modalState.template = this.template;
-  }
 
   // signIn() {
   //   this.userService.signIn(this.username, this.password)
@@ -43,14 +36,6 @@ export class SigninComponent implements AfterViewInit {
   //       console.log('user or password is not correct');
   //     });
   // }
-
-  yes() {
-    this.modalState.modal.close('confirmed');
-  }
-
-  no() {
-    this.modalState.modal.dismiss('not confirmed');
-  }
 
 }
 
