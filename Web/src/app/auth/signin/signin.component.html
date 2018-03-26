@@ -16,20 +16,36 @@
   </mat-dialog-actions>
 </div> -->
 
-<div class="modal fade" id="modal-id">
+<!-- <div class="modal fade" id="modal-id">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <!-- <h4 class="modal-title">{{modalOptions.modalTitle}}</h4> -->
+        <h4 class="modal-title">{{modalOptions.modalTitle}}</h4>
       </div>
       <div class="modal-body">
         <p>لطفا لاگین کنید</p>
       </div>
       <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-danger" (click)="yes()">Yes</button>
-        <button type="button" class="btn btn-secondary" (click)="no()">No</button> -->
+        <button type="button" class="btn btn-danger" (click)="yes()">Yes</button>
+        <button type="button" class="btn btn-secondary" (click)="no()">No</button>
       </div>
     </div>
   </div>
-</div>
+</div> -->
+
+  <div class="modal-header">
+    <h4 class="modal-title">ورود به سامانه</h4>
+  </div>
+  <div class="modal-body">
+    <input placeholder="نام کاربری" name="username" [(ngModel)]="username" />
+    <input type="password" placeholder="کلمه عبور" name="password" [(ngModel)]="password" />
+  </div>
+  <div class="modal-footer">
+      <button (click)="signIn()">ورود</button>
+      <button (click)="close()">انصراف</button>
+  </div>
+
+  
+
+  

@@ -1,7 +1,6 @@
 import { UserService } from './../user.service';
 import { Component, TemplateRef, ViewChild, AfterViewInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-signin',
@@ -11,7 +10,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 export class SigninComponent{
-  constructor(private userService: UserService, public ngbActiveModal: NgbActiveModal) {
+  constructor(private userService: UserService, private ngbActiveModal: NgbActiveModal) {
   }
 
 
@@ -19,23 +18,28 @@ export class SigninComponent{
   password = '';
 
 
-  // signIn() {
-  //   this.userService.signIn(this.username, this.password)
-  //     .subscribe(res => {
-  //       if (res.ok && res.status === 200) {
-  //         // if signIn succeeded:
-  //         // write token to localstorage
-  //         localStorage.setItem('token', res.text());
-  //         this.dialogRef.close(true);
-  //       } else if (!res.ok && res.status === 401) {
-  //         console.log('user or password is not correct');
-  //       } else {
-  //         console.log('failed in login operation.');
-  //       }
-  //     }, error => {
-  //       console.log('user or password is not correct');
-  //     });
-  // }
-
+  signIn() {
+    this.userService.signIn(this.username, this.password)
+      .subscribe(res => {
+        if (res.ok && res.status === 200) {
+          // if signIn succeeded:
+          // write token to localstorage
+          localStorage.setItem('token', res.text());
+          this.ngbActiveModal.close(true);
+        } else if (!res.ok && res.status === 401) {
+          console.log('user or password is not correct');
+        } else {
+          console.log('failed in login operation.');
+        }
+      }, error => {
+        console.log('user or password is not correct');
+      });
+  }
+  close(){
+    this.ngbActiveModal.close('close');
+  }
+  dismiss(){
+    this.ngbActiveModal.dismiss('dismiss');
+  }
 }
 
